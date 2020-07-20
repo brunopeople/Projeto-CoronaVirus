@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CasesComponent } from './cases/cases.component';
 import { CasesDetailsComponent } from './cases-details/cases-details.component';
@@ -18,7 +19,8 @@ import { CasesStatComponent } from './cases-stat/cases-stat.component';
     CasesStatComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
