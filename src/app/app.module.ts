@@ -8,6 +8,8 @@ import { CasesDetailsComponent } from './cases-details/cases-details.component';
 import { AddCasesComponent } from './add-cases/add-cases.component';
 import { EditCasesComponent } from './edit-cases/edit-cases.component';
 import { CasesStatComponent } from './cases-stat/cases-stat.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,10 @@ import { CasesStatComponent } from './cases-stat/cases-stat.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
