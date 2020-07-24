@@ -7,7 +7,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 /**Error quando é invalidado se estiverem no estado sujo, tocado ou validado */
 
 export class MyErrorStateMatcher implements ErrorStateMatcher{
-  isErrorState(control: FormControl | null, form: FormGroupDirective | Ngform | null): boolean{
+  isErrorState(control: FormControl | null, form: FormGroupDirective | Ngform | null): boolean {
     const isSubmited = form && form.submited;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmited));
   }
