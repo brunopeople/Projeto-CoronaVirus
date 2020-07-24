@@ -52,7 +52,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSlideToggleModule,
     MatButtonToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

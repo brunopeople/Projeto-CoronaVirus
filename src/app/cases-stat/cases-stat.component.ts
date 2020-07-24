@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Label } from 'ng2-charts';
 import {ChartOptions, ChartType, ChartDataSets} from 'chart.js';
 import { ApiService } from '../api.service';
-import {Statistic } from '../statistic';
+import { Statistic } from '../statistic';
 
-;
+
 
 @Component({
   selector: 'app-cases-stat',
@@ -13,24 +13,27 @@ import {Statistic } from '../statistic';
 })
 export class CasesStatComponent implements OnInit {
 
-stats: Statistic[] = [];
-label = 'Positive';
-isLoadingResults = true;
-barChartOptions: ChartOptions = {
-  responsive: true,
-};
+  stats: Statistic[] = [];
+  label = 'Positive';
+  isLoadingResults = true;
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  
+  barChartLabels: Label[] = [];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
+  barChartData: ChartDataSets[] = [{ data: [], backgroundColor: [], label: this.label}];
 
-barChartLabels: Label[] = [];
-barChartType: ChartType = 'bar';
-barChartLegend = true;
-barChartPlugins = [];
-barChartData: ChartDataSets[] = [{ data: [], backgroundColor: [], label: this.label}];
+  constructor(private api: ApiService) {    
+  }
 
-  constructor(private api: ApiService) {
-    
-   }
+  ngOnInit(): void {
+    this.getStatistic(this.label);
+  }
 
-   getStatistic(status: string) {
+  getStatistic(status: string) {
     this.barChartData = [{data: [], backgroundColor: [], label: this.label}];
     this.barChartLabels = [];
     this.api.getStatistic(status)
@@ -62,7 +65,7 @@ barChartData: ChartDataSets[] = [{ data: [], backgroundColor: [], label: this.la
     });
   }
 
-  ngOnInit(): void {
+  changeStatus(){
     this.isLoadingResults = true;
     this.getStatistic(this.label);
   }
