@@ -10,35 +10,29 @@ const routes: Routes = [
   {
     path: 'cases',
     component: CasesComponent,
-    data: {title: 'Lista de Casos'}
+    data: { title: 'List of Cases' }
   },
-
   {
     path: 'cases-details/:id',
     component: CasesDetailsComponent,
-    data: {title: 'Detalhes de Casa'}
+    data: { title: 'Cases Details' }
   },
-
   {
     path: 'cases-stat',
     component: CasesStatComponent,
-    data: {title: 'Casos Estaticos'}
+    data: { title: 'Cases Statistic' }
   },
-
   {
     path: 'add-cases',
     component: AddCasesComponent,
-    data: {title: 'Casos Adicionados'}
+    data: { title: 'Add Cases' }
   },
-
   {
     path: 'edit-cases/:id',
     component: EditCasesComponent,
-    data: {title: 'Editar Casos'}
+    data: { title: 'Edit Cases' }
   },
-
-  {
-    path: '',
+  { path: '',
     redirectTo: '/cases',
     pathMatch: 'full'
   }
